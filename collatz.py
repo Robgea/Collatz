@@ -25,7 +25,7 @@ def collatz_func(num, check_set):
             cleared_set.add(num)
             num = num/2
 
-        elif (num % 2) == 1:
+        else:
             #sys.stdout.write(f'{num} is new and odd! 3X+1 time! {(num * 3) + 1}\n')
             cleared_set.add(num)
             num = (num * 3) + 1
