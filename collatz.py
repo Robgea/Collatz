@@ -52,6 +52,7 @@ def runner(target):
 
         elif check_num in double_set:
             confirmed_set.add(check_num)
+            double_set.add(check_num * 2)
             run_num += 1
             check_num += 1
 
