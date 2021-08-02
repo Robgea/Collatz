@@ -33,13 +33,6 @@ def collatz_func(num, check_set):
     return cleared_set
 
 
-
-
-
-
-
-
-
 def runner(target):
 
     sys.stdout.write(f"Starting hunt! \n \n Time is now: {datetime.datetime.now()}\n")
@@ -87,12 +80,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
-
