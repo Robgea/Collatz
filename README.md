@@ -23,3 +23,4 @@ Notes:
 
 First run takes 8 minutes and 52 seconds.
 Eliminating 2X searched numbers reduces this to 6 minutes 38 seconds.
+Eliminating 2X of the above reduces it to 5 minutes 4 seconds. 
