@@ -8,7 +8,7 @@ So, for instance, the program should run sequentially:
 - 1 (Stopping immediately)
 - 2 -> 1 
 - 3 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2, halting there because it already had 2 in the system.
-then the program will skip 4 and 5 because they have already been encountered in previous hunts.
+- then the program will skip 4 and 5 because they have already been encountered in previous hunts.
 
 
 Updated program now ignores numbers that are 2x a previously searched number that has not otherwise been encountered because that will be a one-step equation. 
