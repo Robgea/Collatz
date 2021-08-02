@@ -44,7 +44,10 @@ def runner(target):
 
     sys.stdout.write(f"Starting hunt! \n \n Time is now: {datetime.datetime.now()}\n")
 
+    start_time = datetime.datetime.now()
+
     confirmed_set = set()
+    double_set = set()
     check_num = 1
     run_num = 1
 
@@ -53,16 +56,30 @@ def runner(target):
             '''sys.stdout.write(f'Not checking {check_num}. Previously cleared!\n')
             sys.stdout.flush()'''
             check_num += 1
+
+        elif check_num in double_set:
+            confirmed_set.add(check_num)
+            run_num += 1
+            check_num += 1
+
+
         else:
             cleared_nums = collatz_func(check_num, confirmed_set)
             confirmed_set = confirmed_set|cleared_nums
             if run_num % 100 == 0:
                 sys.stdout.write(f"Just finished run number: {run_num}! \n Checking: {check_num} \n New numbers are: {cleared_nums} \n \n Time is now: {datetime.datetime.now()}\n")
                 sys.stdout.flush()
+
+            if (check_num * 2) not in confirmed_set:
+                double_set.add(check_num * 2)
+
             run_num += 1
             check_num += 1
 
-    sys.stdout.write(f"Completed! \n Last number checked: {check_num} \n Total numbers checked: {len(confirmed_set)} \n Time is now: {datetime.datetime.now()} \n")
+    end_time = datetime.datetime.now()
+
+    sys.stdout.write(f"Completed! \n Last number checked: {check_num} \n Total numbers checked: {len(confirmed_set)} \n Time is now: {datetime.datetime.now()} \n \n Start time was: {start_time} \n End time was: {end_time} \n Total runtime: {end_time - start_time}")
+    sys.stdout.flush()
 
 
 def main():
